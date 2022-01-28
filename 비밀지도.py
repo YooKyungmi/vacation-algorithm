@@ -12,8 +12,7 @@ def solution(n, arr1, arr2):
         a = format((arr1[i] | arr2[i]), 'b')
         a = a.replace('1', '#')
         a = a.replace('0', ' ')
-        while len(a) < n:
-            a = ' '+a
+        a = a.rjust(n, ' ')
         answer.append(a)
 
     return answer
