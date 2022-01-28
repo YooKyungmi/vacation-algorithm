@@ -8,19 +8,18 @@ def solution(id_list, report, k):
     data = {}
     repData = []
     for i in id_list:
-        data[i] = [0, []]
+        data[i] = []
 
     report = set(report)
     for j in report:
         j = j.split()
-        data[j[1]][1].append(j[0])
-        if len(data[j[1]][1]) >= k:
+        data[j[1]].append(j[0])
+        if len(data[j[1]]) >= k:
             repData.append(j[1])
 
-    repData = list(map(lambda x: data[x][1] if len(
-        data[x][1]) >= k else [], id_list))
+    repData = list(map(lambda x: data[x] if len(
+        data[x]) >= k else [], id_list))
     repData = sum(repData, [])
-    print(repData)
 
     answer = list(map(lambda x: repData.count(x), id_list))
     return answer
