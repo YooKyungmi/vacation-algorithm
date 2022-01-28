@@ -1,0 +1,8 @@
+신고 결과 받기
+
+id list 딕셔너리로 만들기
+value 리스트로 지정
+report set()으로 중복제거
+report에서 신고 카운트 value[0],
+신고한 사람도 저장 value[1]
+len(value[0])>=2, 신고리스트에 저장
