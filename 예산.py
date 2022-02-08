@@ -5,12 +5,18 @@ budget = 10
 
 def solution(d, budget):
     d.sort()
-    sum = 0
-    for i in range(len(d)):
-        if sum+d[i] <= budget:
-            answer = i+1
-        else:
-            break
+    if sum(d[:len(d)//2]) >= budget:
+        for i in range(1, len(d)//2):
+            if sum(d[:i]) <= budget:
+                answer = i
+            else:
+                break
+    else:
+        for i in range(len(d)//2, len(d)+1):
+            if sum(d[:i]) <= budget:
+                answer = i
+            else:
+                break
     return answer
 
 
