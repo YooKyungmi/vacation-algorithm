@@ -6,10 +6,10 @@ s = "oneoneoneone"
 def solution(s):
     num = ['zero', 'one', 'two', 'three', 'four',
            'five', 'six', 'seven', 'eight', 'nine']
-    while s.isdigit() == False:
-        for i in range(9):
-            if num[i] in s:
-                s = s.replace(num[i], str(i))
+    s = "".join(num)
+    for i in range(9):
+        if num[i] in s:
+            s = s.replace(num[i], str(i))
     return int(s)
 
 
