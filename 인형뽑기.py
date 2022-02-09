@@ -10,12 +10,12 @@ def solution(board, moves):
     result = []
     answer = 0
     for j in moves:
-        for i in range(len(board)-1, 0, -1):
-            if board[i-1][j-1] == 0:
-                if board[i][j-1] != 0:
-                    result.append(board[i][j-1])
-                    board[i][j-1] = 0
+        for i in range(len(board)):
+            if board[i][j-1] != 0:
+                result.append(board[i][j-1])
+                board[i][j-1] = 0
                 break
+        print(result)
         if len(result) >= 2 and result[-1] == result[-2]:
             del result[-2:]
             answer += 2
