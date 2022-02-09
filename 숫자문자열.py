@@ -1,5 +1,5 @@
 # isdigit()
-s = "234"
+s = "oneoneoneone"
 # 234567
 
 
