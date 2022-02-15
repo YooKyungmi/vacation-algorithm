@@ -7,7 +7,7 @@ def solution(N, stages):
     for i in stages:
         user[i-1] += 1
     fail = list(
-        map(lambda x: user[x]/sum(user[x:]), range(N)))
+        map(lambda x: user[x]/sum(user[x:]) if user[x] != 0 else 0, range(N)))
     answer = dict(zip(range(1, N+1), fail))
     answer = sorted(answer, key=answer.get, reverse=True)
     return answer
